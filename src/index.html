@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Project</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="fonts/fontello/css/fontello.css" rel="stylesheet" >
+    <link href="styles/main.css" rel="stylesheet" media="screen">
+	
+	<meta name="google-signin-scope" content="https://mail.google.com/ https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/gmail.readonly">
+    <meta name="google-signin-client_id" content="75453322041-pn5dhuulkpmuhlmu4o5o46n5svpqj6bm.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+   
+  </head>
+
+  <body class="testProject">
+	<div class="g-signin2" data-onsuccess="onAuthorize" data-theme="dark"></div>
+    <script>
+	  (function(global){ 
+		  		  
+		  global.onAuthorize = function (googleUser) {
+			// Useful data for your client-side scripts:
+			var profile = googleUser.getBasicProfile();
+			console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+			console.log('Full Name: ' + profile.getName());
+			console.log('Given Name: ' + profile.getGivenName());
+			console.log('Family Name: ' + profile.getFamilyName());
+			console.log("Image URL: " + profile.getImageUrl());
+			console.log("Email: " + profile.getEmail());
+
+			// The ID token you need to pass to your backend:
+			var access_token = googleUser.getAuthResponse().access_token;
+			console.log("Access Token: " + access_token);
+			
+		  };
+			
+	  }(window)); 	  
+
+    </script>
+	
+	
+    <div class="wrapper">
+
+<!-- HEADER 5bfK5JTI_U9nKMPDQ2FUheHl -->
+
+      <header class="header">
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="logoBlock">
+              <a href="index.html"><img src="images/logotype.png" class="logo" title="Logo"><img src="images/logotypeMobile.png" class="logoMobile"></a>
+              <span>Page title</span>
+            </div>
+
+            <div class="header-comp pull-right">
+
+              <div class="dropdown">          
+                <a class="dropdown-toggle" class="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" href="#"><span>New York</span><i class="icon-down-open"></i></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Moscow</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Minsk</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tokio</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Barcelona</a></li>
+                </ul>
+              </div>
+
+              <a href="#" class="btn btn-sm btn-header">
+                <i class="headerIcon icon-bell"></i>
+              </a> 
+              <a href="#" class="btn btn-sm btn-header"> 
+               <i class="headerIcon icon-mail"></i>
+              </a> 
+              <a href="#" class="profile"><span>User name</span><img src="images/profilePhoto.png"></a>
+              <a href="#" class="btn btn-xs btn-header">
+                <i class="headerIcon icon-search"></i>
+              </a> 
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+<!-- END OF HEADER -->
+
+<!-- NAVBAR -->
+
+      <nav class="navbar navbar-default navbar-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button> 
+          </div>
+
+          <div class="collapse navbar-collapse bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#" title="Menu item">Menu item</a></li>
+              <li><a href="#" title="Menu item">Menu item</a></li>
+              <li><a href="#" title="Menu item">Menu item</a></li>
+              <li><a href="#" title="Menu item" class="active">Menu item</a></li>
+              <li><a href="#" title="Menu item">Menu item</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<!-- END OF NAVBAR -->
+
+<!-- CENTRAl -->
+      
+      <main class="container main">
+
+        <aside class="submenu">
+
+            <section class="submenuSection"> 
+              <ul class="nav">
+                <li><a href="#" title="Submenu">Submenu item 7d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 5d</a></li>
+              </ul>
+             </section>
+    
+            <section class="submenuSection">
+              <h4 class="submenuCategory">Submenu</h4>
+              <ul class="nav">
+                <li><a href="#" title="Submenu">Submenu item 7d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 2d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 4d</a></li>
+                <li><a href="#" title="Submenu">More tags</a></li>
+              </ul>
+            </section>
+
+            <section class="submenuSection"> 
+              <h4 class="submenuCategory">Submenu</h4>
+              <ul class="nav">
+                <li><a href="#" title="Submenu" class="active">Submenu item 1d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 1d</a></li>
+              </ul>
+            </section>
+
+            <section class="submenuSection"> 
+              <h4 class="submenuCategory">Submenu</h4>
+              <ul class="nav">
+                <li><a href="#" title="Submenu">Submenu item 4d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 2d</a></li>
+                <li><a href="#" title="Submenu">Submenu item1 &amp; Submenu2 2d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 7d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 1d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 1d</a></li>
+              </ul>
+            </section>
+
+            <section class="submenuSection"> 
+              <h4 class="submenuCategory">Submenu</h4>
+              <ul class="nav">
+                <li><a href="#" title="Submenu">Submenu item 2d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 1d</a></li>
+                <li><a href="#" title="Submenu">Submenu item 3d</a></li>
+              </ul>
+            </section>
+
+        </aside>
+
+        <section class="mainSection">
+
+          <div class="heading">
+            <h1>Page title in</h1>
+            <div class="dropdown">          
+              <a class="dropdown-toggle" class="dropdownMenu2" data-toggle="dropdown" aria-expanded="true" href="#"><span>New York</span><i class="icon-down-open"></i></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Moscow</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Minsk</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tokio</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Barcelona</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="searchForm row">
+
+            <div class="col-sm-14">
+              <form name="search" action="#" method="get" class="form-inline form-search pull-left">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="search" placeholder="Search...">
+                    <a href="#" class="btn btn-search">
+                      <i class="icon-search"></i>
+                    </a>
+                </div>
+              </form>
+            </div>
+
+            <div class="options col-sm-10">
+              <a href="#" title="Add new item" class="newItem" data-toggle="modal" data-target="#myModal"><i class="icon-plus-small"></i><span>New Item</span></a>
+              
+              <!-- Modal window -->
+
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Add new item</h4>
+                    </div>
+                    <div class="modal-body">
+                      <label class="modal-label">Item name</label>
+                      <input type="text" class="form-control">
+                      <label class="modal-label">Text</label>
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- End of Modal Window -->
+
+              <a href="#" class="btn btn-sm btn-option"><i class="icon-sliders"></i></a>
+            </div>
+
+          </div>
+
+          <section class="postsContainer">
+
+            <section class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="images/member1.png" alt="userpic">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="userInfo clearfix">
+                    <span>User name</span>
+                    <span class="rank">Pro</span>
+                    <div class="commentsAndTime pull-right">
+                      <a href="#"><i class="icon-chat"></i>2</a>
+                      <span><i class="icon-clock"></i><time class="timeago" datetime="2015-06-14T09:24:17Z"></time></span>
+                    </div>
+                  </div>
+                  <div class="itemName">
+                    <a href="#" class="media-heading" title="Item title">Item title 1i</a>
+                    <span class="status pull-right"></span>
+                  </div>
+                  <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. </p>
+                  <div class="tags">
+                    <button type="submit" class="btn btn-tag">
+                      <i class="icon-tag"></i>
+                    </button>
+                    <a href="#"  class="tag" title="tag">tag1</a>
+                    <a href="#"  class="tag" title="tag">tag2</a>
+                    <a href="#"  class="tag" title="tag">tag3</a>
+                  </div>
+                </div>
+            </section>
+
+            <section class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="images/member2.png" alt="userpic">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="userInfo clearfix">
+                    <span>User name</span>
+                    <span class="rank">Member</span>
+                    <div class="commentsAndTime pull-right">
+                      <a href="#"><i class="icon-chat"></i>2</a>
+                      <span><i class="icon-clock"></i><time class="timeago" datetime="2015-05-11T10:50:17Z"></time></span>
+                    </div>
+                  </div>
+                  <div class="itemName">
+                    <a href="#" class="media-heading" title="Item title">Item title 1i</a>
+                    <span class="status pull-right hidden"></span>
+                  </div>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. </p>
+                  <div class="tags">
+                    <button type="submit" class="btn btn-tag">
+                      <i class="icon-tag"></i>
+                    </button>
+                    <a href="#"  class="tag" title="tag">tag1</a>
+                    <a href="#"  class="tag" title="tag">tag2</a>
+                    <a href="#"  class="tag" title="tag">tag3</a>
+                  </div>
+                </div>
+            </section>
+
+            <section class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="images/member3.png" alt="userpic">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="userInfo clearfix">
+                    <span>User name</span>
+                    <span class="rank">Member</span>
+                    <div class="commentsAndTime pull-right">
+                      <a href="#"><i class="icon-chat"></i>2</a>
+                      <span><i class="icon-clock"></i><time class="timeago" datetime="2012-06-14T09:24:17Z"></time></span>
+                    </div>
+                  </div>
+                  <div class="itemName clearfix">
+                    <a href="#" class="media-heading" title="Item title">Item title 1i</a>
+                    <span class="status pull-right hidden"></span>
+                  </div>
+                  <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. </p>
+                  <div class="tags">
+                    <button type="submit" class="btn btn-tag">
+                      <i class="icon-tag"></i></span>
+                    </button>
+                    <a href="#"  class="tag" title="tag">tag1</a>
+                    <a href="#"  class="tag" title="tag">tag2</a>
+                    <a href="#"  class="tag" title="tag">tag3</a>
+                  </div>
+                </div>
+            </section>
+
+            <section class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="images/member4.png" alt="userpic">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="userInfo clearfix">
+                    <span>User name</span>
+                    <span class="rank">Member</span>
+                    <div class="commentsAndTime pull-right">
+                      <a href="#"><i class="icon-chat"></i>2</a>
+                      <span><i class="icon-clock"></i><time class="timeago" datetime="2015-06-16T15:30:17Z"></time></span>
+                    </div>
+                  </div>
+                  <div class="itemName">
+                    <a href="#" class="media-heading" title="Item title">Item title 1i</a>
+                    <span class="status pull-right hidden"></span>
+                  </div>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. </p>
+                  <div class="tags">
+                    <button type="submit" class="btn btn-tag">
+                      <i class="icon-tag"></i>
+                    </button>
+                    <a href="#"  class="tag" title="tag">tag1</a>
+                    <a href="#"  class="tag" title="tag">tag2</a>
+                    <a href="#"  class="tag" title="tag">tag3</a>
+                  </div>
+                </div>
+            </section>                                    
+
+            <div class="controlButtons">
+              <a href="#" class="btn btn-default btn-prevNext">
+                <i class="icon-left-open-big"></i>Previous</a>
+              <a href="#" class="btn btn-default btn-prevNext">Next
+                <i class="icon-right-open-big"></i></a>
+            </div>
+
+          <footer class="footer">
+            <div class="navbar navbar-default">
+              <ul class="nav navbar-nav">
+                <li><a href="#" title="menu">About</a></li>
+                <li><a href="#" title="menu">Policies</a></li>
+                <li><a href="#" title="menu">Site Map</a></li>
+                <li><a href="#" title="menu">Help</a></li>
+                <li><a href="#" title="menu">Contact us</a></li>
+              </ul>
+            </div>
+
+            <div class="rights clearfix">
+              <img src="images/logotype2.png" class="pull-left">
+              <p>&copy;2015. Qulix Systems. All rights reserved.</p>
+            </div>
+
+          </footer>
+
+        </section>
+
+      </main>
+   
+
+<!-- CENTRAl -->
+    
+    </div>   
+
+	
+	<script src="scripts/retina.min.js"></script>
+    <script src="scripts/jquery.timeago.js"></script>
+    <script src="scripts/jquery.timeago.locales.js"></script>
+    <script src="scripts/script.js"></script>
+     
+   </body>
+</html>

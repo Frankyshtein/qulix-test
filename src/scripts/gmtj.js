@@ -3,7 +3,8 @@ const senders = document.querySelectorAll('.user-name');
 const subjects = document.querySelectorAll('.media-heading');
 const snippets = document.querySelectorAll('.snippet');
 let nextPageToken;
-let previousPageToken = 1;
+let previousPageToken = [1];
+let prev = 0;
 let initData = async (id = '', param = '') => {
   const api_call = await fetch(
     `https://www.googleapis.com/batch/gmail/v1/users/${window.googleUser
@@ -48,26 +49,25 @@ function nextPage() {
   initData('', `?maxResults=4&pageToken=${nextPageToken}`).then(data => {
     this.console.log(data);
     if (data.nextPageToken && previousPageToken != 1) {
-      previousPageToken = nextPageToken;
+      previousPageToken.push(nextPageToken);
       nextPageToken = data.nextPageToken;
+      prev++;
     }
     showLetter(data, 0);
   });
 }
 function previousPage() {
   [].forEach.call(letters, item => item.classList.add('hide'));
-  if (previousPageToken == 1) {
+  if (previousPageToken[prev] == 1) {
     initData('', '?maxResults=4').then(data => {
       this.console.log(data);
       nextPageToken = data.nextPageToken;
       showLetter(data, 0);
     });
   } else {
-    initData('', `?maxResults=4&pageToken=${previousPageToken}`).then(data => {
-      // if (data.nextPageToken && previousPageToken != 1) {
-      //   previousPageToken = nextPageToken;
-      //   nextPageToken = data.nextPageToken;
-      // }
+    prev--;
+    initData('', `?maxResults=4&pageToken=${previousPageToken[prev]}`).then(data => {
+      nextPageToken = data.nextPageToken;
       showLetter(data, 0);
     });
   }

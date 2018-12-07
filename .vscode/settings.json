@@ -1,0 +1,5 @@
+{
+    "liveServer.settings.host": "qulix.test",
+    "liveServer.settings.port": 80,
+    "prettier.printWidth": 120
+}

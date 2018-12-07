@@ -2,6 +2,8 @@ const letters = document.getElementsByClassName('media');
 const senders = document.querySelectorAll('.user-name');
 const subjects = document.querySelectorAll('.media-heading');
 const snippets = document.querySelectorAll('.snippet');
+let nextPageToken;
+let previousPageToken = 1;
 let initData = async (id = '', param = '') => {
   const api_call = await fetch(
     `https://www.googleapis.com/batch/gmail/v1/users/${window.googleUser
@@ -17,7 +19,7 @@ let initData = async (id = '', param = '') => {
   return data;
 };
 function showLetter(data, cl) {
-  if (cl === data.resultSizeEstimate) {
+  if (cl === data.messages.length) {
     return;
   }
   initData(data.messages[cl].id, '?format=metadata&metadataHeaders=From&metadataHeaders=Subject').then(value => {
@@ -29,9 +31,9 @@ function showLetter(data, cl) {
   });
 }
 function searchLetter() {
-  clearBox();
-  let param =
-    '?q' +
+  [].forEach.call(letters, item => item.classList.add('hide'));
+  let param = '?maxResults=4';
+  '&q' +
     $('.input-group .form-control')
       .serialize()
       .slice(6)
@@ -41,12 +43,43 @@ function searchLetter() {
     showLetter(data, 0);
   });
 }
-function clearBox() {
-  console.log([].forEach.call(letters, item => item.classList.add('hide')));
+function nextPage() {
+  [].forEach.call(letters, item => item.classList.add('hide'));
+  initData('', `?maxResults=4&pageToken=${nextPageToken}`).then(data => {
+    this.console.log(data);
+    if (data.nextPageToken && previousPageToken != 1) {
+      previousPageToken = nextPageToken;
+      nextPageToken = data.nextPageToken;
+    }
+    showLetter(data, 0);
+  });
+}
+function previousPage() {
+  [].forEach.call(letters, item => item.classList.add('hide'));
+  if (previousPageToken == 1) {
+    initData('', '?maxResults=4').then(data => {
+      this.console.log(data);
+      nextPageToken = data.nextPageToken;
+      showLetter(data, 0);
+    });
+  } else {
+    initData('', `?maxResults=4&pageToken=${previousPageToken}`).then(data => {
+      // if (data.nextPageToken && previousPageToken != 1) {
+      //   previousPageToken = nextPageToken;
+      //   nextPageToken = data.nextPageToken;
+      // }
+      showLetter(data, 0);
+    });
+  }
 }
 window.onAuthorize = function(googleUser) {
   window.googleUser = googleUser;
-  initData().then(data => {
+  document.querySelector('.profile span').innerText = window.googleUser.getBasicProfile().getName();
+  document.querySelector('.profile img').src = window.googleUser.getBasicProfile().getImageUrl();
+  this.console.log(document.querySelector('.profile img').src);
+  initData('', '?maxResults=4').then(data => {
+    this.console.log(data);
+    nextPageToken = data.nextPageToken;
     showLetter(data, 0);
   });
 };
